@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class App {
     public static void main (String[] args) {
 
@@ -8,16 +10,32 @@ public class App {
         //PUT IN SOME TYPE OF SIGNUP/LOGIN LOGIC
 
         String name = "";
-        float timeCost = 0;
-        float savingsCostRetire = 0;
-        float invest4PercentCost = 0;
-        float invest6PercentCost = 0;
+        LocalDate dob;
+        String incomeType = "";
+        double income = 0;
+        double weeklyHours = 0;
+        double hourlyIncome = 0;
+        int age = 0;
+        int yearsToRetire = 0;
+        double price = 0;
+        double timeCost = 0;
+        double savingsCostRetire = 0;
+        double invest4PercentCost = 0;
+        double invest6PercentCost = 0;
 
         name = wii.getName();
-        timeCost = c.calcTime();
-        savingsCostRetire = c.calcSavingsRetirement();
-        invest4PercentCost = c.calc4PercentInvest();
-        invest6PercentCost = c.calc6PercentInvest();
+        dob = wii.getDOB();
+        income = wii.getIncome();
+        incomeType = wii.getIncomeType();
+        weeklyHours = wii.getWeeklyHours();
+        hourlyIncome = wii.getHourlyIncome(income, weeklyHours);
+        age = ca.calcAge(dob);
+        yearsToRetire = ca.calcRetireYears(age);
+        price = c.getPrice();
+        timeCost = c.calcTime(price, hourlyIncome);
+        savingsCostRetire = c.calcSavingsRetirement(price, yearsToRetire);
+        invest4PercentCost = c.calc4PercentInvest(price, yearsToRetire);
+        invest6PercentCost = c.calc6PercentInvest(price, yearsToRetire);
 
         System.out.println("Welcome back, " + name + "!");
 

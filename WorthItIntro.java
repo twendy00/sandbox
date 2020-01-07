@@ -25,11 +25,13 @@ public class WorthItIntro {
     // revisit
     public LocalDate getDOB() {
         Scanner scan = new Scanner (System.in);
+        String dobInput = "";
         LocalDate dob;
 
         System.out.println("What is your date of birth?");
         // NEED TO FORMAT DOB SOMEHOW
-        dob = scan.nextDate();
+        dobInput = scan.nextLine();
+        dob = LocalDate.parse(dobInput);
         // new SimpleDateFormat(dateFormat).parse(scanner.nextLine()))
 
         return dob;

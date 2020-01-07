@@ -18,16 +18,15 @@ public class Calculations {
     }
 
     // Calculates the working time it takes to buy that product
-    public float calcTime(double price, double hourlyIncome) {
-        float timeCost = price/hourlyIncome;
+    public double calcTime(double price, double hourlyIncome) {
+        double timeCost = price/hourlyIncome;
 
         return timeCost;
     }
 
-    public float calcSavingsRetirement(int yearsToRetire) {
-        float savingsRate = 0.0170;
-        float savingsCostRetire = price;
-        float yearsToRetire = 65 - age;
+    public double calcSavingsRetirement(double price, int yearsToRetire) {
+        double savingsRate = 0.0170;
+        double savingsCostRetire = price;
 
         for (int i = 0; i < yearsToRetire; i++){
             savingsCostRetire = savingsCostRetire + (savingsCostRetire*savingsRate);
@@ -36,9 +35,9 @@ public class Calculations {
         return savingsCostRetire;
     }
 
-    public float calc4PercentInvest(int yearsToRetire) {
-        float invest4PercentRate = 0.04;
-        float invest4PercentCost = price;
+    public double calc4PercentInvest(double price, int yearsToRetire) {
+        double invest4PercentRate = 0.04;
+        double invest4PercentCost = price;
         
         for (int i = 0; i < yearsToRetire; i++){
             invest4PercentCost = invest4PercentCost + (invest4PercentCost*invest4PercentRate);
@@ -47,9 +46,9 @@ public class Calculations {
         return invest4PercentCost;
     }
 
-    public float calc6PercentInvest(int yearsToRetire) {
-        float invest6PercentRate = 0.06;
-        float invest6PercentCost = price;
+    public double calc6PercentInvest(double price, int yearsToRetire) {
+        double invest6PercentRate = 0.06;
+        double invest6PercentCost = price;
         
         for (int i = 0; i < yearsToRetire; i++){
             invest6PercentCost = invest6PercentCost + (invest6PercentCost*invest6PercentRate);
