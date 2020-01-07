@@ -47,7 +47,7 @@ public class Calculations {
         return invest4PercentCost;
     }
 
-        public float calc6PercentInvest(int yearsToRetire) {
+    public float calc6PercentInvest(int yearsToRetire) {
         float invest6PercentRate = 0.06;
         float invest6PercentCost = price;
         

@@ -2,10 +2,7 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 
-public class WorthItIntro{
-
-        Scanner scan = new Scanner (System.in);
-        DecimalFormat df = new DecimalFormat("#.##");
+public class WorthItIntro {
 
     // Initial form to get basic information from user
     // Not sure if I should add login component and if so, how to do it. 
@@ -26,7 +23,7 @@ public class WorthItIntro{
     }
 
     // revisit
-    public class getDOB() {
+    public LocalDate getDOB() {
         Scanner scan = new Scanner (System.in);
         LocalDate dob;
 
@@ -39,7 +36,7 @@ public class WorthItIntro{
     }
 
     // revisit
-    public string getIncomeType() {
+    public String getIncomeType() {
         Scanner scan = new Scanner (System.in);
         String incomeType = "wage";
 
@@ -71,8 +68,8 @@ public class WorthItIntro{
     }
 
     public double getHourlyIncome(double income, double weeklyHours) {
-        float hourlyIncome = income/weeklyHours;
-        
+        double hourlyIncome = income/weeklyHours;
+
         return hourlyIncome;
     }
 
@@ -81,25 +78,4 @@ public class WorthItIntro{
     }
 
 }
-
-// WANT TO KEEP THESE 2 SECTIONS AND CONTINUALLY UPDATE
-    public int calcAge(LocalDate dob) {
-        // NOT SURE IF I SHOULD LOOK AT ONLY YEAR OR BOTH MONTH AND YEAR
-        LocalDate today = LocalDate.now();
-
-        Period p = Period.between(dob, today);
-
-        int months = period.getMonths();
-        int years = period.getYears();
-
-        return years;
-    }
-
-    public int calcRetireYears(int years) {
-        int retirementAge = 65;
-
-        yearsToRetire = retirementAge - age;
-
-        return yearsToRetire;
-    }
 
