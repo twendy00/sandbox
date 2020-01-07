@@ -37,12 +37,10 @@ public class App {
         invest4PercentCost = c.calc4PercentInvest(price, yearsToRetire);
         invest6PercentCost = c.calc6PercentInvest(price, yearsToRetire);
 
-        System.out.println("Welcome back, " + name + "!");
-
-        System.out.println("It costs " + timeCost + " hours of your time to purchase this product.");
-        System.out.println("If you put this money in savings, it will grow to " + savingsCostRetire + " by the time you retire.");
-        System.out.println("If you invested this money, it will grow to " + invest4PercentCost + " by the time you retire assuming a 4% return.");
-        System.out.println("If you invested this money, it will grow to " + invest6PercentCost + " by the time you retire assuming a 6% return.");
+        System.out.println("It costs " + String.format("%.2f", timeCost) + " hours of your time to purchase this product.");
+        System.out.println("If you put this money in savings, it will grow to $" + String.format("%.2f", savingsCostRetire) + " by the time you retire.");
+        System.out.println("If you invested this money, it will grow to $" + String.format("%.2f", invest4PercentCost) + " by the time you retire assuming a 4% return.");
+        System.out.println("If you invested this money, it will grow to $" + String.format("%.2f", invest6PercentCost) + " by the time you retire assuming a 6% return.");
 
     }
 }

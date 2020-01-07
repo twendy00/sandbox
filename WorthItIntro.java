@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class WorthItIntro {
 
@@ -25,13 +26,15 @@ public class WorthItIntro {
     // revisit
     public LocalDate getDOB() {
         Scanner scan = new Scanner (System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
         String dobInput = "";
         LocalDate dob;
 
         System.out.println("What is your date of birth?");
         // NEED TO FORMAT DOB SOMEHOW
         dobInput = scan.nextLine();
-        dob = LocalDate.parse(dobInput);
+        dob = LocalDate.parse(dobInput, formatter);
         // new SimpleDateFormat(dateFormat).parse(scanner.nextLine()))
 
         return dob;
@@ -70,7 +73,7 @@ public class WorthItIntro {
     }
 
     public double getHourlyIncome(double income, double weeklyHours) {
-        double hourlyIncome = income/weeklyHours;
+        double hourlyIncome = income/weeklyHours/52;
 
         return hourlyIncome;
     }
